@@ -55,14 +55,14 @@ const HomePage = () => {
     []
   );
 
-  const regenrate = async () => {
+  const regenerate = async () => {
     const { data } = await get(`/strapi-content-type-explorer/get-types`);
     setData(data);
     drawDiagram();
   };
 
   useEffectSkipInitial(() => {
-    regenrate();
+    regenerate();
   }, [options.showAdminTypes, options.showPluginTypes]);
 
   useEffect(() => {
@@ -97,9 +97,9 @@ const HomePage = () => {
           <Button
             variant="secondary"
             startIcon={<Refresh />}
-            onClick={regenrate}
+            onClick={regenerate}
           >
-            Regenrate
+            Regenerate
           </Button>
         }
       />
